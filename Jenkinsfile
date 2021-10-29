@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        any {
+        docker {
             label 'docker-build'
             image 'node:lts-buster-slim' 
             args '-p 3000:3000' 
@@ -11,6 +11,8 @@ pipeline {
             steps {
                 sh 'npm install' 
             }
+            
+            
         }
     }
 }
