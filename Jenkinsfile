@@ -4,7 +4,7 @@ pipeline {
             label 'docker'
             image 'node:lts-buster-slim' 
             args '-p 3000:3000' 
-            args '-u jenkins:jenkins'
+            args '-u root:root'
         }
     }
     stages {
