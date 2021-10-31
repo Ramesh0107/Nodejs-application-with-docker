@@ -7,12 +7,14 @@ pipeline {
         }
     }
     stages {
-        stage('Build') { 
+        stage('Build and Deploy') { 
             steps {
                 sh 'npm install' 
                 sh 'npm run build'
+                sh 'npm test'
                 sh 'npm start'
             }
         }
-    }
+    
+     }
 }
