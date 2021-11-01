@@ -11,7 +11,7 @@ COPY . /app
 RUN npm install
 RUN echo "hello world"
 
-EXPOSE 9001
+EXPOSE 9005
 
 
 ENTRYPOINT ["node"]
