@@ -4,8 +4,7 @@ pipeline {
             args '-p 9005:9005' 
             args '-u root:root'
         }
-    }
-    stages {
+       stages {
         stage('Deploy') { 
             steps {
                 sh 'docker build -t my-app --no-cache .' 
@@ -13,4 +12,5 @@ pipeline {
             }
         }
     
-  }
+       }
+}
