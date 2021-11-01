@@ -1,10 +1,8 @@
 pipeline {
-    agent {
-        docker {
-            label 'docker'
+    agent any {
+                    label 'docker'
         }
-    }
-       stages {
+        stages {
         stage('Deploy') { 
             steps {
                 sh 'docker build -t my-app --no-cache .' 
