@@ -3,7 +3,7 @@ pipeline {
         docker {
             label 'docker'
             image 'node:lts-buster-slim' 
-            args '-p 3000:3000' 
+            args '-p 9005:9005' 
             args '-u root:root'
         }
     }
