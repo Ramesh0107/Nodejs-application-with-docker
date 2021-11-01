@@ -11,8 +11,7 @@ pipeline {
         stage('Build and Deploy') { 
             steps {
                 sh 'npm install' 
-                sh 'npm run build'
-                sh 'npm start'
+                sh 'npm start &'
             }
         }
     
