@@ -9,7 +9,7 @@ COPY . /app
 
 
 RUN npm install
-
+RUN echo "hello world"
 
 EXPOSE 9005
 
