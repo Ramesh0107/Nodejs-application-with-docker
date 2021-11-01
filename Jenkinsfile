@@ -1,9 +1,9 @@
 pipeline {
     agent {
-        docker {
-           // label 'docker'
+        any {
+            label 'docker'
             image 'node:14' 
-         //   args '-p 9005:9005' 
+            args '-p 9005:9005' 
             args '-u root:root'
         }
     }
