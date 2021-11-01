@@ -5,8 +5,8 @@ pipeline {
         stages {
         stage('Deploy') { 
             steps {
-                sh 'docker build -t my-app4 --no-cache .' 
-                sh 'docker run -d -it -p 9000:9000 --name app4 my-app4'
+                sh 'docker build -t my-app5 --no-cache .' 
+                sh 'docker run -d -it -p 9001:9001 --name app5 my-app5'
             }
         }
     
