@@ -3,6 +3,9 @@ pipeline {
                     label 'docker'
         }
         stages {
+                sh 'docker rm -f $(docker ps -a -q)'
+                sh 'docker rmi $(docker images -f dangling=true -q )'
+                sh 'docker ps -f name=alpine -q | xargs --no-run-if-empty docker container stop'
         stage('Deploy') { 
             steps {
                 sh 'docker build -t my-app8 --no-cache .' 
