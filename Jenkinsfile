@@ -2,9 +2,11 @@ pipeline {
     agent {
                     label 'docker'
         }
-        stages {
+        stages('Deploy') {
             sh 'docker rm -f $(docker ps -a -q)'
                 sh 'docker rmi -f $(docker images -a -q)'
+        }
+    stages {
         stage('Deploy') { 
             steps {
                 sh 'docker build -t my-app8 --no-cache .' 
