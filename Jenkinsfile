@@ -10,7 +10,7 @@ pipeline {
                 sh 'docker ps -f name=alpine -q | xargs --no-run-if-empty docker container stop'
                 sh 'docker build -t my-app8 --no-cache .' 
                 sh 'docker run -d -it -p 9008:9008 --name app8 my-app8'
-                sh 'docker push data/ramesh0107:latest --all-tags'
+                sh 'docker push data/ramesh0107:latest'
             }
         }
     
