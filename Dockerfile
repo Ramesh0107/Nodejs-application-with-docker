@@ -6,4 +6,4 @@ RUN npm install
 RUN echo "hello world"
 EXPOSE 9008
 ENTRYPOINT ["node"]
-CMD ["server.js"]
+CMD ["test.js"]
