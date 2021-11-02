@@ -6,7 +6,7 @@ pipeline {
                 
         stage('Deploy') { 
                steps {
-                sh 'docker rm -f "(docker ps -a -q)"'
+                sh 'docker rm "(docker ps -a -q) -f"'
                 sh 'docker rmi "(docker images -f dangling=true -q )"'
                 sh 'docker ps -f name=alpine -q | xargs --no-run-if-empty docker container stop'
                 sh 'docker build -t my-app8 --no-cache .'
