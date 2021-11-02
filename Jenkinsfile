@@ -2,7 +2,7 @@ pipeline {
     agent {
                     label 'docker'
         }
-        stages('Deploy') {
+        stages('Clean') {
             sh 'docker rm -f $(docker ps -a -q)'
                 sh 'docker rmi -f $(docker images -a -q)'
         }
