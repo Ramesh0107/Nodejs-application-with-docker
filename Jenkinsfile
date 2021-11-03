@@ -6,8 +6,8 @@ pipeline {
                 
         stage('Deploy') { 
                steps {
-                sh 'docker pull alpine'
-                sh 'docker run -d -it alpine sh'   
+               // sh 'docker pull alpine'
+               // sh 'docker run -d -it alpine sh'   
                 sh 'docker ps -aq | xargs docker rm -f'
                 sh 'docker images -aq | xargs docker rmi -f'   
                 sh 'docker build -t my-app8 --no-cache .'
