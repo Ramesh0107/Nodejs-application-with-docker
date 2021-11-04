@@ -14,8 +14,7 @@ pipeline {
                 sh 'cat /home/ubuntu/my_password.txt | docker login --username ramesh0107 --password-stdin'   
                 sh 'docker tag my-app ramesh0107/data:${GIT_COMMIT}'  
                 sh 'docker push ramesh0107/data:${GIT_COMMIT}'   
-                sh 'docker pull ramesh0107/data:${GIT_COMMIT}'
-                sh 'docker run -it -d -p 9008:9008 --name mycontainer ramesh0107/data:${GIT_COMMIT}'
+               
                     }
             }
     
